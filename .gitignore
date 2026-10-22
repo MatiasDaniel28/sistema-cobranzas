@@ -1,0 +1,14 @@
+
+
+
+# Datos de clientes
+clientes.json
+clientes.json.tmp
+
+# Archivos temporales de Python
+__pycache__/
+*.py[cod]
+
+# Copias de respaldo
+respaldo_1/
+respaldo_2/
