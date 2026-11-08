@@ -1,14 +1,30 @@
 
 
 
-# Datos de clientes
+# Datos privados de clientes
 clientes.json
 clientes.json.tmp
+clientes_antes_de_restaurar.json
 
-# Archivos temporales de Python
+# Copias de seguridad automáticas
+backups/
+
+# Otras carpetas de respaldo
+respaldo_1/
+respaldo_2/
+
+# Archivos temporales
+*.tmp
 __pycache__/
 *.py[cod]
 
-# Copias de respaldo
-respaldo_1/
-respaldo_2/
+# Entornos virtuales
+.venv/
+venv/
+
+# Configuración local
+.env
+
+
+# Reportes de cobranzas exportados
+reporte_cobranzas_*.xlsx
