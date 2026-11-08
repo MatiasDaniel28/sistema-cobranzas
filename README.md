@@ -14,6 +14,17 @@ Permite administrar clientes, controlar deudas, registrar pagos, consultar histo
 
 ![Panel principal del Sistema de Cobranzas](capturas/panel_principal.png)
 
+### Gestión de clientes
+
+![Ventana de gestión de clientes](capturas/gestion_clientes.png)
+
+### Historial de pagos
+
+![Historial de pagos por cliente](capturas/historial_pagos.png)
+
+### Reportes de cobranzas
+
+![Reportes de cobranzas con filtros por fecha](capturas/reportes.png)
 
 ## Funcionalidades principales
 
