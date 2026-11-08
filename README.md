@@ -1,64 +1,166 @@
 
-
 # Sistema de Cobranzas en Python
 
-Sistema de gestión de cobranzas desarrollado en Python, ejecutado desde la consola y con almacenamiento de datos en formato JSON.
+Sistema de gestión de clientes y cobranzas desarrollado en Python, con interfaz gráfica creada mediante Tkinter y una versión alternativa para consola.
 
-## Funcionalidades
+Permite administrar clientes, controlar deudas, registrar pagos, consultar historiales y generar reportes exportables a Excel.
 
-- Registro de clientes.
-- Consulta y búsqueda de clientes.
-- Edición de datos y deudas.
-- Registro de pagos parciales y cancelación de deudas.
-- Historial de pagos y modificaciones.
-- Eliminación de clientes.
-- Resumen general de cobranzas.
-- Validación de datos ingresados.
-- Persistencia de información mediante archivos JSON.
-- Compatibilidad con una estructura de datos anterior.
-- Pruebas automatizadas con `unittest`.
+**Proyecto personal desarrollado con fines de aprendizaje y portfolio profesional.**
+
+## Funcionalidades principales
+
+### Gestión de clientes
+- Registrar nuevos clientes con nombre y deuda inicial.
+- Consultar y buscar clientes por nombre o ID.
+- Editar nombres y deudas.
+- Eliminar clientes con confirmación.
+- Identificar clientes con deuda pendiente o cancelada.
+
+### Gestión de cobranzas
+- Registrar pagos parciales o totales.
+- Actualizar automáticamente las deudas pendientes.
+- Consultar el historial de pagos por cliente.
+- Registrar modificaciones realizadas sobre los clientes.
+
+### Panel de control
+- Visualizar la cantidad total de clientes.
+- Consultar cuántos clientes tienen deuda.
+- Mostrar el importe total de deuda pendiente.
+- Consultar una tabla de clientes con actualización automática.
+- Identificar visualmente el estado de las deudas.
+
+### Reportes y exportación
+- Consultar las cobranzas registradas.
+- Filtrar pagos por períodos de fechas.
+- Visualizar indicadores de recaudación.
+- Consultar reportes individuales por cliente.
+- Exportar los resultados a archivos Excel (.xlsx).
+- Generar totales automáticos en los reportes exportados.
+
+### Seguridad de los datos
+- Almacenamiento local mediante archivos JSON.
+- Validaciones para evitar datos incorrectos.
+- Escritura mediante archivos temporales.
+- Copias de seguridad automáticas antes de operaciones importantes.
+- Restauración de respaldos mediante la interfaz gráfica.
+- Exclusión de datos privados y respaldos mediante `.gitignore`.
 
 ## Tecnologías utilizadas
 
-- Python
-- JSON
-- `unittest` para pruebas automatizadas
-- Git y GitHub (para control de versiones y publicación, una vez configurados)
+- **Python:** lenguaje principal.
+- **Tkinter:** interfaz gráfica de escritorio.
+- **JSON:** almacenamiento de la información.
+- **openpyxl:** generación y formato de reportes Excel.
+- **unittest:** pruebas automatizadas.
+- **Git y GitHub:** control de versiones y publicación del proyecto.
+
+## Estructura del proyecto
+
+- `main.py` — versión de consola.
+- `interfaz.py` — interfaz gráfica de escritorio.
+- `test_cobranzas.py` — pruebas automatizadas.
+- `README.md` — documentación del proyecto.
+- `.gitignore` — exclusión de archivos privados y temporales.
+- `clientes.json` — archivo de datos local, no incluido en el repositorio.
+- `backups/` — carpeta de respaldos generada durante el uso.
 
 ## Requisitos
 
 - Python 3 instalado.
+- Tkinter disponible en la instalación de Python.
+- Biblioteca `openpyxl` para exportar reportes a Excel.
 
-## Instalación y ejecución
+## Instalación
 
-1. Descargar o clonar el repositorio.
-2. Abrir una terminal en la carpeta del proyecto.
-3. Ejecutar:
+Clonar el repositorio:
 
-   ```bash
-   python main.py
-   ```
+```bash
+git clone https://github.com/MatiasDaniel28/sistema-cobranzas.git
+```
+
+Ingresar a la carpeta:
+
+```bash
+cd sistema-cobranzas
+```
+
+Instalar la dependencia para Excel:
+
+```bash
+python -m pip install openpyxl
+```
+
+### Preparación de los datos iniciales
+
+Como los datos de clientes no se publican en GitHub, antes de ejecutar la interfaz por primera vez es necesario crear un archivo llamado `clientes.json` en la carpeta principal del proyecto con el siguiente contenido:
+
+```json
+{
+    "ultimo_id": 0,
+    "clientes": []
+}
+```
+
+Esto permite comenzar con una base de clientes vacía.
+
+## Ejecutar la aplicación
+
+**Interfaz gráfica:**
+
+```bash
+python interfaz.py
+```
+
+**Versión de consola:**
+
+```bash
+python main.py
+```
 
 ## Ejecutar las pruebas
 
-Desde la carpeta del proyecto, ejecutar:
+Desde la carpeta del proyecto:
 
 ```bash
 python -m unittest -v test_cobranzas.py
 ```
 
-El proyecto cuenta actualmente con 35 pruebas automatizadas aprobadas en el entorno de desarrollo.
+El proyecto incluye pruebas automatizadas para funcionalidades de la versión de consola. Las modificaciones posteriores deben verificarse ejecutando nuevamente las pruebas.
 
-## Almacenamiento de datos
+## Copias de seguridad
 
-Los registros se guardan en `clientes.json`. El sistema utiliza un archivo temporal durante el guardado para reducir el riesgo de dejar el archivo principal incompleto ante un error de escritura.
+La aplicación genera respaldos antes de guardar cambios importantes en la información de los clientes.
 
-**Importante:** antes de utilizarlo con información real, se recomienda mantener copias de seguridad periódicas.
+Los respaldos se almacenan en la carpeta `backups/`.
+
+También es posible seleccionar y restaurar una copia anterior mediante la interfaz gráfica.
+
+**Advertencia:** restaurar una copia reemplaza la información completa del archivo de clientes. Se recomienda comprobar el respaldo antes de confirmar la operación.
 
 ## Estado del proyecto
 
-Proyecto en desarrollo. La versión actual funciona desde la consola y puede ampliarse posteriormente con una interfaz gráfica o web.
+**En desarrollo — versión funcional de escritorio.**
 
-## Objetivo
+Funcionalidades implementadas:
 
-Proyecto personal de práctica y portfolio orientado al desarrollo con Python, la validación de datos, el manejo de archivos JSON y las pruebas automatizadas.
+- Gestión de clientes y deudas.
+- Registro e historial de pagos.
+- Panel de control.
+- Reportes por períodos.
+- Exportación a Excel.
+- Copias de seguridad y restauración.
+
+Próximas mejoras previstas:
+
+- Ampliar las pruebas automatizadas de la interfaz gráfica.
+- Mejorar la validación y el manejo de errores.
+- Preparar una versión ejecutable para Windows.
+- Ampliar la documentación con capturas de pantalla.
+
+## Objetivo del proyecto
+
+Este proyecto forma parte de mi aprendizaje de desarrollo de software con Python.
+
+El objetivo es aplicar conocimientos de programación, organización del código, persistencia de datos, validaciones, interfaces gráficas, pruebas automatizadas y control de versiones mediante Git.
+
+El desarrollo se encuentra en evolución y está destinado a demostrar habilidades prácticas como parte de mi portfolio profesional.
