@@ -7,6 +7,14 @@ Permite administrar clientes, controlar deudas, registrar pagos, consultar histo
 
 **Proyecto personal desarrollado con fines de aprendizaje y portfolio profesional.**
 
+
+## Capturas de pantalla
+
+### Panel principal
+
+![Panel principal del Sistema de Cobranzas](capturas/panel_principal.png)
+
+
 ## Funcionalidades principales
 
 ### Gestión de clientes
