@@ -99,9 +99,18 @@ Permite administrar clientes, controlar deudas, registrar pagos, consultar histo
 - `clientes.json` — archivo de datos local, no incluido en el repositorio.
 - `backups/` — carpeta de respaldos generada durante el uso.
 
+
 ## Requisitos
 
-- Python 3 instalado.
+### Versión ejecutable para Windows
+
+- Sistema operativo Windows.
+- No requiere instalar Python ni sus bibliotecas.
+- Permisos de escritura en la carpeta donde se ejecuta el programa.
+
+### Ejecución desde el código fuente
+
+- Python 3.
 - Tkinter disponible en la instalación de Python.
 - Biblioteca `openpyxl` para exportar reportes a Excel.
 
@@ -125,18 +134,17 @@ Instalar la dependencia para Excel:
 python -m pip install openpyxl
 ```
 
-### Preparación de los datos iniciales
 
-Como los datos de clientes no se publican en GitHub, antes de ejecutar la interfaz por primera vez es necesario crear un archivo llamado `clientes.json` en la carpeta principal del proyecto con el siguiente contenido:
+### Almacenamiento de datos
 
-```json
-{
-    "ultimo_id": 0,
-    "clientes": []
-}
-```
+La aplicación guarda la información de los clientes en un archivo `clientes.json`.
 
-Esto permite comenzar con una base de clientes vacía.
+Si el archivo no existe, la interfaz gráfica lo crea automáticamente al iniciarse con una base de clientes vacía.
+
+No es necesario crear el archivo manualmente.
+
+Los datos se almacenan localmente y no se incluyen en el repositorio de GitHub.
+
 
 ## Ejecutar la aplicación
 
@@ -174,23 +182,18 @@ También es posible seleccionar y restaurar una copia anterior mediante la inter
 
 ## Estado del proyecto
 
-**En desarrollo — versión funcional de escritorio.**
+**Versión 0.1.0 publicada — aplicación funcional para Windows.**
 
-Funcionalidades implementadas:
-
-- Gestión de clientes y deudas.
-- Registro e historial de pagos.
-- Panel de control.
-- Reportes por períodos.
-- Exportación a Excel.
-- Copias de seguridad y restauración.
+La primera versión portátil se encuentra disponible en GitHub Releases.
 
 Próximas mejoras previstas:
 
 - Ampliar las pruebas automatizadas de la interfaz gráfica.
 - Mejorar la validación y el manejo de errores.
-- Preparar una versión ejecutable para Windows.
-- Ampliar la documentación con capturas de pantalla.
+- Agregar nuevas funciones de búsqueda y filtrado.
+- Mejorar el diseño visual de la aplicación.
+- Implementar nuevas funcionalidades para la gestión de cobranzas.
+
 
 ## Objetivo del proyecto
 
