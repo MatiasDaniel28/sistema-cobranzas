@@ -1,6 +1,22 @@
 
 # Sistema de Cobranzas en Python
 
+
+## 📥 Descargar aplicación para Windows
+
+[⬇️ Descargar Sistema de Cobranzas v0.1.0](https://github.com/MatiasDaniel28/sistema-cobranzas/releases/tag/v0.1.0)
+
+### Cómo utilizarlo
+
+1. Descargá el archivo `SistemaDeCobranzas_v0.1.0_Windows.zip`.
+2. Extraé el contenido en una carpeta de tu computadora.
+3. Ejecutá `SistemaDeCobranzas.exe`.
+
+No requiere instalar Python.
+
+Los datos se guardan automáticamente en un archivo `clientes.json` junto al ejecutable.
+
+
 Sistema de gestión de clientes y cobranzas desarrollado en Python, con interfaz gráfica creada mediante Tkinter y una versión alternativa para consola.
 
 Permite administrar clientes, controlar deudas, registrar pagos, consultar historiales y generar reportes exportables a Excel.
