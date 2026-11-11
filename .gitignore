@@ -28,3 +28,9 @@ venv/
 
 # Reportes de cobranzas exportados
 reporte_cobranzas_*.xlsx
+
+
+# Archivos generados por PyInstaller
+build/
+dist/
+*.spec

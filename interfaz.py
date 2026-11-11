@@ -8,7 +8,7 @@ import os
 import tempfile
 import shutil
 from datetime import datetime
-
+import sys
 
 # Colores de la aplicación
 FONDO = "#F4F6F9"
@@ -18,7 +18,15 @@ BLANCO = "#FFFFFF"
 GRIS = "#64748B"
 
 # Archivo de datos, ubicado junto a interfaz.py
-ARCHIVO_DATOS = Path(__file__).resolve().parent / "clientes.json"
+
+# Carpeta donde se guardan los datos del programa
+if getattr(sys, "frozen", False):
+    CARPETA_APP = Path(sys.executable).resolve().parent
+else:
+    CARPETA_APP = Path(__file__).resolve().parent
+
+ARCHIVO_DATOS = CARPETA_APP / "clientes.json"
+
 
 
 def cargar_clientes():
@@ -40,12 +48,33 @@ def cargar_clientes():
 
         return clientes
 
+
     except FileNotFoundError:
-        messagebox.showerror(
-            "Archivo no encontrado",
-            f"No se encontró el archivo:\n{ARCHIVO_DATOS}"
-        )
+        # Crear automáticamente el archivo la primera vez
+        datos_iniciales = {
+            "ultimo_id": 0,
+            "clientes": []
+        }
+
+        try:
+            with open(ARCHIVO_DATOS, "x", encoding="utf-8") as archivo:
+                json.dump(
+                    datos_iniciales,
+                    archivo,
+                    indent=4,
+                    ensure_ascii=False
+                )
+                archivo.write("\n")
+
+        except OSError as error:
+            messagebox.showerror(
+                "Error al crear los datos",
+                f"No se pudo crear clientes.json:\n{error}"
+            )
+            return []
+
         return []
+
 
     except (json.JSONDecodeError, ValueError) as error:
         messagebox.showerror(
